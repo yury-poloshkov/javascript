@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Основы Javascript. Homework 1.</title>
+    <style>
+        body{
+            padding: 2%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Урок 2. Семинар. Знакомство с JavaScript</h1>
+    <h2>Задание 1</h2>
+    <p>
+        Необходимо создать переменную в которой будет храниться температура в градусах Цельсия, преобразовать значение в
+        температуру по фаренгейту. <br>
+        Формула перевода градусов Цельсия в градусы Фаренгейта: градусы Фаренгейта = (9 / 5) * градусы Цельсия + 32 <br>
+        Вывести в консоль температуру в Цельсиях и Фаренгейтах.
+    </p>
+    <h2>Задание 2</h2>
+    <p>
+        Необходимо создать переменную name, записать в эту переменную свое имя. <br>
+        Необходимо также создать переменную admin и присвоить этой переменной значение из переменной name. <br>
+        Вывести значение переменной admin в консоль.
+    </p>
+
+    <script>
+        // Задание 1
+
+        let celsiumTemperature = 100;
+        let farengeitTemperature = celsiumTemperature * 9 / 5 + 32;
+
+        console.log(`${celsiumTemperature} градусов по Цельсию = ${farengeitTemperature} градусов по Фаренгейту`);
+
+        // Задание 2
+
+        let name = 'Yury Poloshkov';
+        let admin = name;
+
+        console.log(`Admin's name is ${admin}`);
+
+    </script>
+</body>
+
+</html>
