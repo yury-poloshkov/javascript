@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Основы Javascript. Homework 5.</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="tasks.js"></script>
+</head>
+
+<body>
+    <h1>Урок 10. Семинар. Объекты в JavaScript</h1>
+    <details open>
+        <summary>Задание 1</summary>
+        <p>
+            Дан объект numbers. Необходимо в консоль вывести все значения больше или равные 3. <br>
+            <br>
+            const numbers = { <br>
+            keyin1: 1,<br>
+            keyin2: 2,<br>
+            keyin3: 3,<br>
+            keyin4: 4,<br>
+            keyin5: 5,<br>
+            keyin6: 6,<br>
+            keyin7: 7,<br>
+            }
+        </p>
+        <button onclick="task1()">Решение</button>
+    </details>
+    <details>
+        <summary>Задание 2</summary>
+        <p>
+            Необходимо из объекта, который лежит в константе post вывести значения, к которым приписан комментарий, в
+            консоль.<br>
+            <br>
+            const post = {<br>
+            author: "John", // вывести этот текст<br>
+            postId: 23,<br>
+            comments: [<br>
+            {<br>
+            userId: 10,<br>
+            userName: "Alex",<br>
+            text: "lorem ipsum",<br>
+            rating: {<br>
+            likes: 10,<br>
+            dislikes: 2, // вывести это число<br>
+            },<br>
+            },<br>
+            {<br>
+            userId: 5, // вывести это число<br>
+            userName: "Jane",<br>
+            text: "lorem ipsum 2", // вывести этот текст<br>
+            rating: {<br>
+            likes: 3,<br>
+            dislikes: 1,<br>
+            },<br>
+            },<br>
+            ],<br>
+            };
+        </p>
+        <button onclick="task2()">Решение</button>
+    </details>
+    <details>
+        <summary>Задание 3</summary>
+        <p>Дан массив products, необходимо цену каждого продукта уменьшить на 15% используя метод forEach.<br>
+            <br>
+            const products = [<br>
+            {<br>
+            id: 3,<br>
+            price: 200,<br>
+            },<br>
+            {<br>
+            id: 4,<br>
+            price: 900,<br>
+            },<br>
+            {<br>
+            id: 1,<br>
+            price: 1000,<br>
+            },<br>
+            ];</p>
+        <button onclick="task3()">Решение</button>
+    </details>
+    <details>
+        <summary>Задание 4</summary>
+        <p>
+            1. Необходимо вывести в консоль массив продуктов в котором есть хоть одна фотография используя метод filter.
+            Исходные данные - массив products.<br>
+            2. Необходимо отсортировать массив products используя метод sort по цене, начиная с самой маленькой,
+            заканчивая самой большой ценой, после чего вывести отсортированный массив в консоль.<br>
+
+            ```
+            const products = [<br>
+            {<br>
+            id: 3,<br>
+            price: 127,<br>
+            photos: [<br>
+            "1.jpg",<br>
+            "2.jpg",<br>
+            ],<br>
+            },<br>
+            {<br>
+            id: 5,<br>
+            price: 499,<br>
+            photos: [],<br>
+            },<br>
+            {<br>
+            id: 10,<br>
+            price: 26,<br>
+            photos: [<br>
+            "3.jpg",<br>
+            ],<br>
+            },<br>
+            {<br>
+            id: 8,<br>
+            price: 78,<br>
+            },<br>
+            ];
+        </p>
+
+        <button onclick="task4_filter()">Отфильтровать товары с картинками</button>
+        <button onclick="task4_sort()">Сортировать по цене</button>
+    </details>
+
+    <details>
+        <summary>Задание 5</summary>
+        <p>
+            Дано 2 массива<br><br>
+            const en = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];<br>
+            const ru = ["понедельник", "вторник", "среда", "четверг", "пятница", "суббота", "воскресенье"];<br>
+            <br>
+            Вам необходимо объединить 2 этих массива, чтобы значения первого массива были ключами, а значения второго массива — значениями.
+        </p>
+        <button onclick="task5()">Решение</button>
+    </details>
+</body>
+
+</html>
