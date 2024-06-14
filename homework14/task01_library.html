@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Library</title>
+    </head>
+    <!-- Урок 2. Основы ООП (объектно-ориентированного программирования)
+Домашнее задание
+
+Задание 1: ""Управление библиотекой книг""
+
+Реализуйте класс Book, представляющий книгу, со следующими свойствами и методами:
+
+Свойство title (название) - строка, название книги.
+Свойство author (автор) - строка, имя автора книги.
+Свойство pages (количество страниц) - число, количество страниц в книге.
+Метод displayInfo() - выводит информацию о книге (название, автор и количество страниц). -->
+    <body>
+        <script>
+            class Book {
+                constructor(title, author, pages) {
+                    this.title = title;
+                    this.author = author;
+                    this.pages = pages;
+                }
+                displayInfo() {
+                    console.log("----- Book info -----");
+                    console.log(`Title: ${this.title}`);
+                    console.log(`Author: ${this.author}`);
+                    console.log(`Pages: ${this.pages}`);
+                    console.log("---------------------");
+                }
+            }
+
+            const book1 = new Book("Мастер и Маргарита", "Булгаков М.А.", 500);
+            book1.displayInfo();
+        </script>
+    </body>
+</html>
