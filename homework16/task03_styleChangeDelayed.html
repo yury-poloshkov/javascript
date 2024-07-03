@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <!-- ""Изменение стиля элемента через заданное время""
+
+    Напишите функцию changeStyleDelayed, которая принимает идентификатор элемента и время задержки (в миллисекундах)
+     в качестве аргументов. Функция должна изменить стиль элемента через указанное время.
+
+    // Пример использования функции
+    changeStyleDelayed('myElement', 2000); // Через 2 секунды изменяет стиль элемента с id 'myElement'" -->
+
+    <body>
+        <div id="myElement" style="font-size: 24px; color: blue">
+            Test element
+        </div>
+        <script>
+            const changeStyleDelayed = (elementTag, timeout) => {
+                const myElement = document.querySelector(elementTag);
+                setTimeout(function timeout() {
+                    myElement.style.color = "white";
+                    myElement.style.background = "black";
+                }, timeout);
+            };
+
+            changeStyleDelayed("#myElement", 2000);
+        </script>
+    </body>
+</html>
