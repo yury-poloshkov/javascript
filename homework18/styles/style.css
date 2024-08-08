@@ -1,0 +1,49 @@
+body {
+  padding: 1% 5%;
+}
+
+.pictures {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  min-height: 250px;
+  border: 1px solid black;
+}
+.pictures-box {
+  min-width: 200px;
+  min-height: 200px;
+  border: 1px solid black;
+}
+
+.button-navigator {
+  width: 50px;
+  height: 50px;
+  background-color: gray;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: calc(50% - 25px);
+}
+.button-navigator:hover {
+  background-color: rgb(126, 136, 240);
+}
+.button-navigator__previous {
+  left: 1%;
+}
+.button-navigator__next {
+  right: 1%;
+}
+.button-navigator__image {
+  display: block;
+  height: 70%;
+}
+
+.dots-navigator {
+  width: 400px;
+  height: 20px;
+  border: 1px solid black;
+}/*# sourceMappingURL=style.css.map */
