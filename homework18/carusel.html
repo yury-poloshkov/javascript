@@ -31,5 +31,76 @@
                 />
             </button>
         </section>
+        <script type="module">
+            const getPhotosFromSlingAPI = async (offset = 0, limit = 10) => {
+                limit = limit % 132;
+                const responce = await fetch(
+                    `https://api.slingacademy.com/v1/sample-data/photos?offset=${offset}&limit=${limit}`
+                );
+                const data = await responce.json();
+                return data.photos;
+            };
+
+            const showPicture = (id) => {
+                dotsBar[id].classList.add("dots-navigator__item__active");
+                const pictureBox = document.querySelector(".pictures-box");
+                pictureBox.innerHTML = `<img src="${picturesSet[id].url}" class="pictures-box__item"/>`;
+            };
+
+            const createDotsNavigationBar = () => {
+                const dotsPanel = document.querySelector(".dots-navigator");
+                let index = 0;
+                picturesSet.forEach((element) => {
+                    dotsPanel.insertAdjacentHTML(
+                        "beforeend",
+                        `<div class="dots-navigator__item" data-index="${index++}"></div>`
+                    );
+                });
+            };
+
+            const picterusQuantity = 20;
+            const firstPictureIndex = 0;
+            const picturesSet = await getPhotosFromSlingAPI(
+                firstPictureIndex,
+                picterusQuantity
+            );
+            const pictures = document.querySelector(".pictures");
+            let currentShownPictureID = 0;
+            createDotsNavigationBar();
+            const dotsBar = document.querySelectorAll(".dots-navigator__item");
+            showPicture(currentShownPictureID);
+
+            pictures.addEventListener("click", (event) => {
+                dotsBar[currentShownPictureID].classList.remove(
+                    "dots-navigator__item__active"
+                );
+                if (
+                    event.target.classList.contains(
+                        "button-navigator__previous"
+                    ) ||
+                    event.target.parentElement.classList.contains(
+                        "button-navigator__previous"
+                    )
+                ) {
+                    currentShownPictureID =
+                        (picterusQuantity + currentShownPictureID - 1) %
+                        picterusQuantity;
+                }
+                if (
+                    event.target.classList.contains("button-navigator__next") ||
+                    event.target.parentElement.classList.contains(
+                        "button-navigator__next"
+                    )
+                ) {
+                    currentShownPictureID =
+                        (currentShownPictureID + 1) % picterusQuantity;
+                }
+                if (event.target.classList.contains("dots-navigator__item")) {
+                    currentShownPictureID =
+                        +event.target.getAttribute("data-index");
+                }
+                showPicture(currentShownPictureID);
+            });
+        </script>
     </body>
 </html>
