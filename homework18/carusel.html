@@ -37,6 +37,9 @@
                 const responce = await fetch(
                     `https://api.slingacademy.com/v1/sample-data/photos?offset=${offset}&limit=${limit}`
                 );
+                if (!responce.ok) {
+                    throw new Error("Error#404");
+                }
                 const data = await responce.json();
                 return data.photos;
             };
@@ -57,18 +60,22 @@
                     );
                 });
             };
-
-            const picterusQuantity = 20;
-            const firstPictureIndex = 0;
-            const picturesSet = await getPhotosFromSlingAPI(
-                firstPictureIndex,
-                picterusQuantity
-            );
             const pictures = document.querySelector(".pictures");
             let currentShownPictureID = 0;
-            createDotsNavigationBar();
-            const dotsBar = document.querySelectorAll(".dots-navigator__item");
-            showPicture(currentShownPictureID);
+            const picterusQuantity = 20;
+            const firstPictureIndex = 0;
+            let picturesSet;
+            let dotsBar;
+
+            window.onload = async () => {
+                picturesSet = await getPhotosFromSlingAPI(
+                    firstPictureIndex,
+                    picterusQuantity
+                );
+                createDotsNavigationBar();
+                dotsBar = document.querySelectorAll(".dots-navigator__item");
+                showPicture(currentShownPictureID);
+            };
 
             pictures.addEventListener("click", (event) => {
                 dotsBar[currentShownPictureID].classList.remove(

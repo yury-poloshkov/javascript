@@ -8,7 +8,7 @@
     </head>
     <body>
         <article class="photo">
-            <img class="photo__image"></img>
+            <img class="photo__image" />
             <h2 class="photo__author"></h2>
             <div class="btn_box">
                 <button class="photo__btn_like" id="btn_like">
@@ -38,7 +38,7 @@
             const photoAuthor = document.querySelector(".photo__author");
             photoAuthor.textContent = pictureData.author;
             photoImage.src = pictureData.url;
-        }
+        };
 
         const btn_like = document.querySelector(".photo__btn_like");
         const btn_like_counter = document.querySelector(
