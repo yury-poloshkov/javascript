@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Daily Photo</title>
+        <link rel="stylesheet" href="./css/style.css" />
+    </head>
+    <body>
+        <article class="photo">
+            <img class="photo__image"></img>
+            <h2 class="photo__author"></h2>
+            <div class="btn_box">
+                <button class="photo__btn_like" id="btn_like">
+                    <img src="./img/like-svgrepo-com.svg" width="25px" />
+                </button>
+                <p class="photo__btn_like_counter">0</p>
+            </div>
+        </article>
+    </body>
+    <script type="module">
+        const accessKey = "SALLOZuPVTQgML-W0JDpo18yQEVVo4OPnOw6yQRMva0";
+
+        const fetchRandomPhoto = async () => {
+            const response = await fetch(`
+                https://api.unsplash.com/photos/random/?client_id=${accessKey}
+            `);
+            if (!response.ok) {
+                throw new Error("Error#404");
+            }
+            const data = await response.json();
+            return { url: data.urls.small, author: data.user.name };
+        };
+
+        window.onload = async () => {
+            const pictureData = await fetchRandomPhoto();
+            const photoImage = document.querySelector(".photo__image");
+            const photoAuthor = document.querySelector(".photo__author");
+            photoAuthor.textContent = pictureData.author;
+            photoImage.src = pictureData.url;
+        }
+
+        const btn_like = document.querySelector(".photo__btn_like");
+        const btn_like_counter = document.querySelector(
+            ".photo__btn_like_counter"
+        );
+
+        btn_like.addEventListener("click", () => {
+            btn_like_counter.textContent =
+                Number(btn_like_counter.textContent) + 1;
+        });
+    </script>
+</html>

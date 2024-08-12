@@ -1,0 +1,30 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.btn_box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.photo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-height: 100vh;
+    padding: 1%;
+    &__btn_like {
+        border: 1px solid gray;
+        border-radius: 4px;
+        padding: 2px;
+
+        &:hover {
+            background-color: pink;
+        }
+    }
+}
