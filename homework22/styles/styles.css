@@ -35,4 +35,24 @@ body {
 }
 .review_text {
   min-height: 200px;
+}
+
+.products {
+  padding: 10px 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.products__review {
+  border-radius: 5px;
+  background-color: blanchedalmond;
+  border: 1px solid gray;
+  margin: 5px 0;
+}
+.products__btnDelete {
+  padding: 5px;
+  margin-bottom: 15px;
+}
+.products__btnDelete:hover {
+  color: red;
 }/*# sourceMappingURL=styles.css.map */
