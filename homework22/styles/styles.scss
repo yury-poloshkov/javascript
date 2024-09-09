@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    padding: 25px;
+}
+
+.reviews {
+    &_menu {
+        padding: 10px;
+        background-color: antiquewhite;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        border-bottom: 1px solid black;
+
+        &__item {
+            color: black;
+            &:hover {
+                color: red;
+            }
+        }
+    }
+}
+
+.review {
+    &_add_frm {
+        padding: 20px 0;
+        max-width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    &_text {
+        min-height: 200px;
+    }
+}
